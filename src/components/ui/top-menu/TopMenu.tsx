@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { IoCartOutline, IoSearchOutline } from "react-icons/io5";
 
-const TopMenu = () => {
+export const TopMenu = () => {
   return (
     <div className="flex px-5 justify-between items-center w-full">
       <div>
@@ -58,4 +58,4 @@ const TopMenu = () => {
   );
 };
 
-export default TopMenu;
+
