@@ -1,9 +1,14 @@
+"use client";
+
 import { titleFont } from "@/config/fonts";
+import { useUiStore } from "@/store";
 import Link from "next/link";
 import React from "react";
 import { IoCartOutline, IoSearchOutline } from "react-icons/io5";
 
 export const TopMenu = () => {
+  const openMenu = useUiStore((state) => state.openSideMenu);
+
   return (
     <div className="flex px-5 justify-between items-center w-full">
       <div>
@@ -30,7 +35,7 @@ export const TopMenu = () => {
         </Link>
         <Link
           className="m-2 p-2 rounded-md transition-all hover:bg-gray-100"
-          href="/category/kids"
+          href="/category/kid"
         >
           Niños
         </Link>
@@ -50,12 +55,13 @@ export const TopMenu = () => {
           </div>
         </Link>
 
-        <button className="m-2 p-2 rounded-md transition-all hover:bg-gray-100">
+        <button
+          className="m-2 p-2 rounded-md transition-all hover:bg-gray-100"
+          onClick={openMenu}
+        >
           Menú
         </button>
       </div>
     </div>
   );
 };
-
-
